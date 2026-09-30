@@ -9,6 +9,7 @@
 <body class="homebody">
     <header class="mainheader">
         <h1>Native Plants of the Great Lakes</h1>
+        <button type="button" id="toggleMobileNav" class="button-link mobile-nav" data-toggled="false">&lt; back to plant list</button>
         <button type="button" id="toggleDescription" class="button-link" data-toggled="true">about this content</button>
     </header>
 
@@ -421,12 +422,32 @@
     </main>
 
     <script>
-        document.getElementById('toggleDescription').addEventListener('click', toggleDescription, false);
-        
         const links = document.querySelectorAll('.plantlink');
+        const descnav = document.getElementById('toggleDescription')
+        const mobilenav = document.getElementById('toggleMobileNav');
+        
+        descnav.addEventListener('click', toggleDescription, false);
         links.forEach(l => {
             l.addEventListener('click', updateIframe, false)
         });
+
+        if (isSmallScreen) {
+            mobilenav.addEventListener('click', showPlantList, false);
+        }
+
+        function showPlantList() {
+            const content = document.getElementById('content');
+            const list = document.getElementById('contentlist');
+            const frame = document.getElementById('plantcontent');
+            
+            frame.style.display = "none";
+            list.style.display = "block";
+            mobilenav.style.display = "none";
+            descnav.style.display = "block";
+            window.setTimeout(() => {                
+                content.scrollTop = content.getAttribute('dataScrollPos');
+            }, 50);
+        }
 
         function toggleDescription(e) {
             const desc = document.getElementById('description');
@@ -449,6 +470,10 @@
             e.target.setAttribute('data-toggled', toggleAttr);
         }
 
+        function isSmallScreen() {
+            return window.innerWidth <= 500;
+        }
+
         function updateIframe(e) {
             const empty = document.querySelector('.empty-state')
             if (empty) {
@@ -456,13 +481,25 @@
             }
 
             const link = e.target.parentNode.getAttribute('data-file');
-            document.getElementById('plantcontent').src = 'plants/' + link;
-            
+            const list = document.getElementById('contentlist');
+            const frame = document.getElementById('plantcontent');
             const links = document.querySelectorAll('.plantlink');
+            
+            frame.src = 'plants/' + link;
             links.forEach(l => {
                 l.parentNode.classList.remove('activePlant');
             });
             e.target.parentNode.classList.toggle('activePlant');
+            
+            if (isSmallScreen) {
+                const content = document.getElementById('content');
+                content.setAttribute('dataScrollPos', content.scrollTop);
+                
+                frame.style.display = "block";
+                list.style.display = "none";
+                mobilenav.style.display = "block";
+                descnav.style.display = "none"
+            }
         }
     </script>
 </body>
