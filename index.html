@@ -311,7 +311,7 @@
             l.addEventListener('click', updateIframe, false)
         });
 
-        if (isSmallScreen) {
+        if (isSmallScreen()) {
             mobilenav.addEventListener('click', showPlantList, false);
         }
 
@@ -371,7 +371,7 @@
             });
             e.target.parentNode.classList.toggle('activePlant');
             
-            if (isSmallScreen) {
+            if (isSmallScreen()) {
                 const content = document.getElementById('content');
                 content.setAttribute('dataScrollPos', content.scrollTop);
                 
