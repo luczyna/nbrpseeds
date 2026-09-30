@@ -116,7 +116,7 @@ body.homebody {
     max-width: 100%;
 }
 
-@media screen and (min-width: 500px) {
+@media only screen and (min-device-width: 500px) {
     .mainheader {
         display: flex;
         align-items: baseline;
@@ -197,7 +197,7 @@ body.homebody {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media only screen and (max-device-width: 500px) {
     body.homebody {
         display: flex;
         flex-direction: column;
