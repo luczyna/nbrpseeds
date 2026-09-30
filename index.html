@@ -27,7 +27,9 @@
     </section>
 
     <main class="contentcontainer" id="content">
-        <iframe id="plantcontent"></iframe>
+        <p class="empty-state">choose a plant from the list</p>
+
+        <iframe class="plant-frame" id="plantcontent"></iframe>       
         
         <div class="content-list">
             <h2 id="forbes">Forbes</h2>
@@ -448,14 +450,19 @@
         }
 
         function updateIframe(e) {
+            const empty = document.querySelector('.empty-state')
+            if (empty) {
+                empty.remove();
+            }
+
             const link = e.target.parentNode.getAttribute('data-file');
             document.getElementById('plantcontent').src = 'plants/' + link;
             
             const links = document.querySelectorAll('.plantlink');
             links.forEach(l => {
-                l.parentNode.classList.remove('activePlant')
+                l.parentNode.classList.remove('activePlant');
             });
-            e.target.parentNode.classList.toggle('activePlant')
+            e.target.parentNode.classList.toggle('activePlant');
         }
     </script>
 </body>
