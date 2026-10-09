@@ -114,7 +114,6 @@ body.homebody {
 #content:not(.contentcontainer) {
     background: white;
     /* nonzero top padding adds bare background */
-    /* padding: 0 30px 30px; */
     padding: 5px 30px 5px;
 }
 
@@ -141,7 +140,6 @@ body.homebody {
         justify-content: space-between;
     }
 
-    
     #description {
         margin: 10px 0;
         padding: 10px 30px;
@@ -215,11 +213,17 @@ body.homebody {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin: 0 10px 10px;
     }
 
     .mainheader h1 {
         width: 100%;
         margin-bottom: 15px;
+        font-size: 1.5em;
+    }
+
+    .mobileheaderfancy {
+        font-size: 0.65em;
     }
 
     .mobile-nav {
@@ -233,12 +237,15 @@ body.homebody {
     }
 
     #description {
-        /* margin: 10px 0; */
-        padding: 0 30px;
+        padding: 0 10px;
     }
 
     .content-list h2, .content-list h4 {
-        padding: 0 30px;
+        padding: 0 10px;
+    }
+
+    #content:not(.contentcontainer) {
+        padding: 5px 10px 5px;
     }
 
     .missing {
@@ -247,6 +254,10 @@ body.homebody {
 
     .empty-state {
         display: none;
+    }
+
+    .plantlist li {
+        padding: 5px 10px;
     }
 
     .plant-frame {
