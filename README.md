@@ -1,6 +1,6 @@
 # North Branch Restoration Project Seed Book
 
-A static website, from an [archived EPA site](https://archive.epa.gov/greenacres/web/html/index-3.html) documenting native plants of the Chicago region, specifically for the North Branch Restoration Project's seed harvesting efforts.
+A [website](https://luczyna.github.io/nbrpseeds/), from an [archived EPA site](https://archive.epa.gov/greenacres/web/html/index-3.html) documenting native plants of the Chicago region, specifically for the North Branch Restoration Project's seed harvesting efforts.
 
 ## Project Overview
 
