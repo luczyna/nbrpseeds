@@ -2,3 +2,4 @@
 .continue/*
 .env
 .env.test
+node_modules
