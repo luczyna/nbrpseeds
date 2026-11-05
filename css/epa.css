@@ -2,9 +2,11 @@
     --text-base: #303030;
     --text-strong: #202020;
     --text-brand: #4fbf70;
+    --text-light: #454545;
     --text-link: blue;
     --block-brand-light: #a4ff94;
     --block-focus: #9cd7ff;
+    --block-lightfocus: #e2f0fa;
 }
 
 body {
@@ -108,6 +110,24 @@ body.homebody {
 
 .activePlant {
     background: var(--block-brand-light);
+}
+
+.image-desc {
+    background: transparent;
+    transition: background 0.2s ease-in-out;
+}
+
+.image-desc p {
+    margin-top: 6px;
+}
+
+.image-desc:hover {
+    background: var(--block-lightfocus);
+}
+
+.highlight {
+    background: var(--block-brand-light);
+    font-style: italic;
 }
 
 /* UGH */
