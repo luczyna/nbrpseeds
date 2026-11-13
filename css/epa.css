@@ -98,6 +98,14 @@ body.homebody {
     background: var(--block-focus);
 }
 
+.plantlist li a {
+    text-decoration: none;
+}
+
+.plantlist li a:hover {
+    text-decoration: underline;
+}
+
 .latinname {
     font-style: italic;
     font-weight: bold;
@@ -111,13 +119,8 @@ body.homebody {
 
 .plantlink {
     padding-left: 20px;
-    cursor: pointer;
     color: var(--text-link);
     transition: padding-left 0.2s ease-in-out;
-}
-
-.plantlink:hover {
-    text-decoration: underline;
 }
 
 .activePlant {
