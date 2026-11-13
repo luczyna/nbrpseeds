@@ -43,6 +43,18 @@ body.homebody {
     margin-bottom: 0;
 }
 
+.mainheader h1 a {
+    color: var(--text-strong);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+.mainheader h1 a:hover {
+    color: var(--text-link);
+    border-bottom: 2px solid var(--text-link);
+}
+
 #description {
     background: #f2f2f2;
 }
